@@ -1,21 +1,19 @@
-# Energy-Aware Testing for UAV Software
+# Energy-Aware Testing for UAV Software: Detecting Energy Bugs through Simulation-Based Analysis #
 
 Detecting energy bugs through simulation-based analysis of PX4 ULog telemetry.
 
-This repository accompanies the BSc Computer Science (COMS30045) dissertation
-*"Energy-Aware Testing for UAV Software: Detecting Energy Bugs through
-Simulation-Based Analysis"* by **Philjae (Henry) Shin**, supervised by
-Dr Kerstin Eder (University of Bristol).
+Philjae (Henry) Shin
+
+Supervised by Dr Kerstin Eder.
 
 The framework adds a host-side energy-analysis layer to the existing PX4
-SITL / Aerialist test pipeline. It does not modify PX4 or Aerialist, it
-consumes the `.ulg` files they produce and detects four classes of
+SITL / Aerialist test pipeline. It consumes the `.ulg` files they produce and detects four classes of
 energy anomaly (Energy Vampire, Voltage Anomaly, Motor Inefficiency,
 Drain Rate Spike), then applies a phase-aware filter to separate
 startup artefacts from in-flight anomalies. Across 9 SITL missions the
 framework reports 27 raw candidates, of which 18 are removed as
-arming/take-off artefacts, leaving 9 operational candidates — all Drain
-Rate Spikes that extend into early cruise.
+arming/take-off artefacts, leaving 9 operational candidates (Drain
+Rate Spikes that extend into early cruise).
 
 > *Section, table, and figure numbers in this README refer to the
 > as-submitted version of the dissertation.*
@@ -218,13 +216,14 @@ live there because they need to subclass the SBFT `TestCase` class.
 
 ### 4.3 Headline numbers
 
-| Result | Where | Reproduction |
-|---|---|---|
-| 6 missions × 3 detections = 18 raw candidates | Table 4.1 | §2.1 above |
-| Threshold sensitivity stable for Vampire, sharp drop for Motor at ≥ 2.5×, gradual for Spike | Table 4.2 | §2.2 above |
-| 9 missions × 3 = 27 raw → 18 startup-only removed (67%) → 9 retained | Table 4.4 | §2.3 above |
-| Synthetic injection: 3/4 detected; aggregate P = 0.20, R = 0.75, F1 = 0.32 | Table 4.5 | §2.4 above |
-| No Voltage Anomalies on unmodified SITL logs | Discussion / Limitations of Chapter 4 | (PX4 SITL battery-model artefact) |
+| Result | Where | Bundled data (verify without re-running) | Reproduction |
+|---|---|---|---|
+| 6 missions × 3 detections = 18 raw candidates | Table 4.1 | `src/UAV-Testing-Competition/snippets/case_studies/mission{1,1-2,2,2-2,3,3-2}_energy_report.json` + `energy_summary.csv` | §2.1 |
+| Threshold sensitivity stable for Vampire, sharp drop for Motor at ≥ 2.5×, gradual for Spike | Table 4.2 | *stdout-only — re-run to verify* | §2.2 |
+| 9 missions × 3 = 27 raw → 18 startup-only removed (67%) → 9 retained | Table 4.4 | `src/results/phase_aware/comparison_table.csv`, `phase_aware_analysis_report.json` | §2.3 |
+| Synthetic injection: 3/4 detected; aggregate P = 0.20, R = 0.75, F1 = 0.32 | Table 4.5 | `src/results/bug_injection/metrics.csv`, `bug_injection_report.json`, `metrics_table.tex` | §2.4 |
+| No Voltage Anomalies on unmodified SITL logs | Discussion / Limitations of Chapter 4 | (no `voltage_anomaly` entry in any of the 9 `*_energy_report.json` files; PX4 SITL battery-model artefact) | — |
+| 3 stress missions (Hover, Zigzag, Altitude) | Table 4.3 | `data/stress_results/stress_{hover,zigzag,altitude}_energy_report.json` + `.ulg` | §2.5 |
 
 ### 4.4 External dependencies (dissertation *Supporting Technologies*)
 
