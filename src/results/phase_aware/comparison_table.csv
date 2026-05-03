@@ -1,0 +1,10 @@
+Mission,Original Bugs,Phase-Filtered Bugs,Bugs Removed,Phases
+competition/mission1,3,1,2,"ARMING_TAKEOFF, CRUISE, LANDING"
+competition/mission1-2,3,1,2,"ARMING_TAKEOFF, CRUISE, LANDING"
+competition/mission2,3,1,2,"ARMING_TAKEOFF, CRUISE, LANDING"
+competition/mission2-2,3,1,2,"ARMING_TAKEOFF, CRUISE, LANDING"
+competition/mission3,3,1,2,"ARMING_TAKEOFF, CRUISE, LANDING"
+competition/mission3-2,3,1,2,"ARMING_TAKEOFF, CRUISE, LANDING"
+stress/hover,3,1,2,"ARMING_TAKEOFF, CRUISE, LANDING"
+stress/zigzag,3,1,2,"ARMING_TAKEOFF, CRUISE, LANDING"
+stress/altitude,3,1,2,"ARMING_TAKEOFF, CRUISE, LANDING"

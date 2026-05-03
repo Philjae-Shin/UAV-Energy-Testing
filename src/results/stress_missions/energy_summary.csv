@@ -1,0 +1,4 @@
+file,duration_sec,battery_consumed_pct,voltage_drop_v,avg_motor_output,energy_efficiency,total_bugs,energy_vampire,voltage_anomaly,motor_inefficiency,drain_rate_spike
+stress_zigzag.ulg,525.61,50.0,1.100000023841858,1677.9599609375,5.71,3,1,0,1,1
+stress_altitude.ulg,176.2,50.0,1.100000023841858,1623.739990234375,17.03,3,1,0,1,1
+stress_hover.ulg,118.0,50.0,1.100000023841858,1574.7099609375,25.42,3,1,0,1,1

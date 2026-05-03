@@ -1,0 +1,71 @@
+{
+  "source_file": "mission2-2.ulg",
+  "source_path": "/sessions/peaceful-stoic-einstein/mnt/UAV-Energy-Testing/src/UAV-Testing-Competition/snippets/case_studies/mission2-2.ulg",
+  "analyzed_at": "2026-02-16T23:08:03.767854",
+  "pipeline": "aerialist_energy_runner",
+  "summary": {
+    "flight_duration_sec": 145.8,
+    "battery_consumed_pct": 50.0,
+    "voltage_drop_v": 1.100000023841858,
+    "avg_motor_output": 1594.3299560546875,
+    "max_motor_output": 1814.25,
+    "energy_efficiency": 20.58
+  },
+  "bugs": [
+    {
+      "type": "energy_vampire",
+      "severity": "high",
+      "time_start": 12.5,
+      "time_end": 15.5,
+      "description": "High battery drain (63.74%/min) during low motor activity (1007 PWM)",
+      "metrics": {
+        "avg_drain_rate_per_min": 63.74,
+        "avg_motor_output": 1006.59,
+        "duration_sec": 3.0
+      }
+    },
+    {
+      "type": "drain_rate_spike",
+      "severity": "high",
+      "time_start": 13.5,
+      "time_end": 43.0,
+      "description": "Battery drain rate spike: 100.00%/min (baseline: 20.55%/min)",
+      "metrics": {
+        "max_drain_rate_per_min": 100.0,
+        "avg_drain_rate_per_min": 97.68,
+        "baseline_drain_per_min": 20.55,
+        "spike_ratio": 4.87
+      }
+    },
+    {
+      "type": "motor_inefficiency",
+      "severity": "medium",
+      "time_start": 16.308,
+      "time_end": 17.804,
+      "description": "High motor output variance (83750) indicating unbalanced load",
+      "metrics": {
+        "avg_variance": 83749.859375,
+        "duration_sec": 1.5
+      }
+    }
+  ],
+  "bug_count": 3,
+  "bug_summary": {
+    "total_bugs": 3,
+    "by_type": {
+      "energy_vampire": 1,
+      "drain_rate_spike": 1,
+      "motor_inefficiency": 1
+    },
+    "by_severity": {
+      "low": 0,
+      "medium": 1,
+      "high": 2,
+      "critical": 0
+    }
+  },
+  "outputs": {
+    "energy_profile_plot": "results/energy/mission2-2_energy_profile.png",
+    "bug_timeline_plot": "results/energy/mission2-2_bug_timeline.png"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "source_file": "mission1-2.ulg",
+  "source_path": "/sessions/peaceful-stoic-einstein/mnt/UAV-Energy-Testing/src/UAV-Testing-Competition/snippets/case_studies/mission1-2.ulg",
+  "analyzed_at": "2026-02-16T23:08:05.030907",
+  "pipeline": "aerialist_energy_runner",
+  "summary": {
+    "flight_duration_sec": 88.6,
+    "battery_consumed_pct": 50.0,
+    "voltage_drop_v": 1.100000023841858,
+    "avg_motor_output": 1519.949951171875,
+    "max_motor_output": 1843.75,
+    "energy_efficiency": 33.86
+  },
+  "bugs": [
+    {
+      "type": "energy_vampire",
+      "severity": "high",
+      "time_start": 13.5,
+      "time_end": 16.5,
+      "description": "High battery drain (64.01%/min) during low motor activity (1006 PWM)",
+      "metrics": {
+        "avg_drain_rate_per_min": 64.01,
+        "avg_motor_output": 1006.37,
+        "duration_sec": 3.0
+      }
+    },
+    {
+      "type": "drain_rate_spike",
+      "severity": "low",
+      "time_start": 15.0,
+      "time_end": 43.5,
+      "description": "Battery drain rate spike: 100.00%/min (baseline: 33.71%/min)",
+      "metrics": {
+        "max_drain_rate_per_min": 100.0,
+        "avg_drain_rate_per_min": 98.86,
+        "baseline_drain_per_min": 33.71,
+        "spike_ratio": 2.97
+      }
+    },
+    {
+      "type": "motor_inefficiency",
+      "severity": "medium",
+      "time_start": 17.204,
+      "time_end": 18.904,
+      "description": "High motor output variance (83092) indicating unbalanced load",
+      "metrics": {
+        "avg_variance": 83091.78125,
+        "duration_sec": 1.7
+      }
+    }
+  ],
+  "bug_count": 3,
+  "bug_summary": {
+    "total_bugs": 3,
+    "by_type": {
+      "energy_vampire": 1,
+      "drain_rate_spike": 1,
+      "motor_inefficiency": 1
+    },
+    "by_severity": {
+      "low": 1,
+      "medium": 1,
+      "high": 1,
+      "critical": 0
+    }
+  },
+  "outputs": {
+    "energy_profile_plot": "results/energy/mission1-2_energy_profile.png",
+    "bug_timeline_plot": "results/energy/mission1-2_bug_timeline.png"
+  }
+}

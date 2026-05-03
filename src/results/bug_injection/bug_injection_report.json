@@ -1,0 +1,331 @@
+{
+  "experiment": "Bug Injection for UAV Energy Testing",
+  "log_file": "UAV-Testing-Competition/snippets/case_studies/mission1.ulg",
+  "date": "2026-05-03T19:40:42.166451",
+  "scenarios": {
+    "vampire": {
+      "metrics": {
+        "tp": 1,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.25,
+        "recall": 1.0,
+        "f1": 0.4,
+        "injected_count": 1,
+        "detected_count": 4
+      },
+      "injected_bugs": [
+        {
+          "type": "energy_vampire",
+          "time_start": 60.0,
+          "time_end": 70.0,
+          "description": "Energy vampire: 2.5x drain during low motor activity"
+        }
+      ],
+      "detected_bugs": [
+        {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 13.0,
+          "time_end": 15.0,
+          "description": "High battery drain (58.96%/min) during low motor activity (988 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 58.96,
+            "avg_motor_output": 987.93,
+            "duration_sec": 2.0
+          }
+        },
+        {
+          "type": "drain_rate_spike",
+          "severity": "high",
+          "time_start": 14.0,
+          "time_end": 43.0,
+          "description": "Battery drain rate spike: 100.00%/min (baseline: 19.83%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.0,
+            "avg_drain_rate_per_min": 97.68,
+            "baseline_drain_per_min": 19.83,
+            "spike_ratio": 5.04
+          }
+        },
+        {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 16.204,
+          "time_end": 17.904,
+          "description": "High motor output variance (81914) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 81913.7578125,
+            "duration_sec": 1.7
+          }
+        },
+        {
+          "type": "drain_rate_spike",
+          "severity": "high",
+          "time_start": 60.0,
+          "time_end": 70.0,
+          "description": "Battery drain rate spike: 89.28%/min (baseline: 19.83%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 89.28,
+            "avg_drain_rate_per_min": 89.28,
+            "baseline_drain_per_min": 19.83,
+            "spike_ratio": 4.5
+          }
+        }
+      ]
+    },
+    "voltage": {
+      "metrics": {
+        "tp": 1,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.25,
+        "recall": 1.0,
+        "f1": 0.4,
+        "injected_count": 1,
+        "detected_count": 4
+      },
+      "injected_bugs": [
+        {
+          "type": "voltage_anomaly",
+          "time_start": 80.0,
+          "time_end": 83.0,
+          "description": "Voltage drop: 0.8V over 3s"
+        }
+      ],
+      "detected_bugs": [
+        {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 13.0,
+          "time_end": 15.0,
+          "description": "High battery drain (58.96%/min) during low motor activity (988 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 58.96,
+            "avg_motor_output": 987.93,
+            "duration_sec": 2.0
+          }
+        },
+        {
+          "type": "drain_rate_spike",
+          "severity": "low",
+          "time_start": 15.0,
+          "time_end": 43.0,
+          "description": "Battery drain rate spike: 100.00%/min (baseline: 35.29%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.0,
+            "avg_drain_rate_per_min": 98.68,
+            "baseline_drain_per_min": 35.29,
+            "spike_ratio": 2.83
+          }
+        },
+        {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 16.204,
+          "time_end": 17.904,
+          "description": "High motor output variance (81914) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 81913.7578125,
+            "duration_sec": 1.7
+          }
+        },
+        {
+          "type": "voltage_anomaly",
+          "severity": "medium",
+          "time_start": 82.0,
+          "time_end": 84.0,
+          "description": "Sudden voltage drop of 0.80V detected",
+          "metrics": {
+            "max_voltage_drop": 0.8,
+            "voltage_at_start": 14.57,
+            "voltage_at_end": 15.1
+          }
+        }
+      ]
+    },
+    "motor": {
+      "metrics": {
+        "tp": 1,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.25,
+        "recall": 1.0,
+        "f1": 0.4,
+        "injected_count": 1,
+        "detected_count": 4
+      },
+      "injected_bugs": [
+        {
+          "type": "motor_inefficiency",
+          "time_start": 50.0,
+          "time_end": 55.0,
+          "description": "Motor imbalance: 0.6 skew factor"
+        }
+      ],
+      "detected_bugs": [
+        {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 13.0,
+          "time_end": 15.0,
+          "description": "High battery drain (58.96%/min) during low motor activity (988 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 58.96,
+            "avg_motor_output": 987.93,
+            "duration_sec": 2.0
+          }
+        },
+        {
+          "type": "drain_rate_spike",
+          "severity": "low",
+          "time_start": 15.0,
+          "time_end": 43.0,
+          "description": "Battery drain rate spike: 100.00%/min (baseline: 35.29%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.0,
+            "avg_drain_rate_per_min": 98.68,
+            "baseline_drain_per_min": 35.29,
+            "spike_ratio": 2.83
+          }
+        },
+        {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 16.204,
+          "time_end": 17.904,
+          "description": "High motor output variance (81914) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 81913.77,
+            "duration_sec": 1.7
+          }
+        },
+        {
+          "type": "motor_inefficiency",
+          "severity": "high",
+          "time_start": 50.004,
+          "time_end": 54.9,
+          "description": "High motor output variance (627427) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 627427.12,
+            "duration_sec": 4.9
+          }
+        }
+      ]
+    },
+    "spike": {
+      "metrics": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0,
+        "injected_count": 1,
+        "detected_count": 3
+      },
+      "injected_bugs": [
+        {
+          "type": "drain_rate_spike",
+          "time_start": 70.0,
+          "time_end": 75.0,
+          "description": "Drain spike: 4.0x baseline"
+        }
+      ],
+      "detected_bugs": [
+        {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 13.0,
+          "time_end": 15.0,
+          "description": "High battery drain (58.96%/min) during low motor activity (988 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 58.96,
+            "avg_motor_output": 987.93,
+            "duration_sec": 2.0
+          }
+        },
+        {
+          "type": "drain_rate_spike",
+          "severity": "low",
+          "time_start": 15.0,
+          "time_end": 43.0,
+          "description": "Battery drain rate spike: 100.00%/min (baseline: 35.29%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.0,
+            "avg_drain_rate_per_min": 98.68,
+            "baseline_drain_per_min": 35.29,
+            "spike_ratio": 2.83
+          }
+        },
+        {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 16.204,
+          "time_end": 17.904,
+          "description": "High motor output variance (81914) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 81913.7578125,
+            "duration_sec": 1.7
+          }
+        }
+      ]
+    },
+    "clean": {
+      "metrics": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0,
+        "f1": 0,
+        "injected_count": 0,
+        "detected_count": 3
+      },
+      "injected_bugs": [],
+      "detected_bugs": [
+        {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 12.5,
+          "time_end": 15.5,
+          "description": "High battery drain (64.07%/min) during low motor activity (1006 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 64.07,
+            "avg_motor_output": 1006.17,
+            "duration_sec": 3.0
+          }
+        },
+        {
+          "type": "drain_rate_spike",
+          "severity": "low",
+          "time_start": 14.0,
+          "time_end": 42.5,
+          "description": "Battery drain rate spike: 100.00%/min (baseline: 35.29%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.0,
+            "avg_drain_rate_per_min": 98.86,
+            "baseline_drain_per_min": 35.29,
+            "spike_ratio": 2.83
+          }
+        },
+        {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 16.204,
+          "time_end": 17.904,
+          "description": "High motor output variance (81914) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 81913.7578125,
+            "duration_sec": 1.7
+          }
+        }
+      ]
+    }
+  },
+  "summary": {
+    "avg_precision": 0.15,
+    "avg_recall": 0.6,
+    "avg_f1": 0.24
+  }
+}

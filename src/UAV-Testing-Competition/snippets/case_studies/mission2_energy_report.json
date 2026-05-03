@@ -1,0 +1,66 @@
+{
+  "file": "mission2.ulg",
+  "path": "UAV-Testing-Competition/snippets/case_studies/mission2.ulg",
+  "analyzed_at": "2026-02-09T20:13:04.988024",
+  "summary": {
+    "flight_duration_sec": 132.4,
+    "battery_consumed_pct": 50.0,
+    "voltage_drop_v": 1.100000023841858,
+    "avg_motor_output": 1588.1500244140625,
+    "max_motor_output": 1838.0,
+    "energy_efficiency": 22.66
+  },
+  "bugs": [
+    {
+      "type": "energy_vampire",
+      "severity": "high",
+      "time_start": 12.5,
+      "time_end": 15.5,
+      "description": "High battery drain (63.79%/min) during low motor activity (1005 PWM)",
+      "metrics": {
+        "avg_drain_rate_per_min": 63.79,
+        "avg_motor_output": 1004.86,
+        "duration_sec": 3.0
+      }
+    },
+    {
+      "type": "drain_rate_spike",
+      "severity": "high",
+      "time_start": 13.5,
+      "time_end": 43.0,
+      "description": "Battery drain rate spike: 100.59%/min (baseline: 22.64%/min)",
+      "metrics": {
+        "max_drain_rate_per_min": 100.59,
+        "avg_drain_rate_per_min": 97.67,
+        "baseline_drain_per_min": 22.64,
+        "spike_ratio": 4.44
+      }
+    },
+    {
+      "type": "motor_inefficiency",
+      "severity": "medium",
+      "time_start": 16.32,
+      "time_end": 17.92,
+      "description": "High motor output variance (83070) indicating unbalanced load",
+      "metrics": {
+        "avg_variance": 83070.171875,
+        "duration_sec": 1.6
+      }
+    }
+  ],
+  "bug_count": 3,
+  "bug_summary": {
+    "total_bugs": 3,
+    "by_type": {
+      "energy_vampire": 1,
+      "drain_rate_spike": 1,
+      "motor_inefficiency": 1
+    },
+    "by_severity": {
+      "low": 0,
+      "medium": 1,
+      "high": 2,
+      "critical": 0
+    }
+  }
+}

@@ -1,0 +1,758 @@
+{
+  "competition/mission1": {
+    "original_bugs": 3,
+    "phase_filtered_bugs": 1,
+    "phase_ranges": {
+      "ARMING_TAKEOFF": [
+        0.0,
+        22.0
+      ],
+      "CRUISE": [
+        23.0,
+        75.0
+      ],
+      "LANDING": [
+        76.0,
+        84.0
+      ]
+    },
+    "bugs": {
+      "0": {
+        "bug": {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 12.5,
+          "time_end": 15.5,
+          "description": "High battery drain (64.07%/min) during low motor activity (1006 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 64.07,
+            "avg_motor_output": 1006.17,
+            "duration_sec": 3.0
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          12.5,
+          15.5
+        ]
+      },
+      "1": {
+        "bug": {
+          "type": "drain_rate_spike",
+          "severity": "low",
+          "time_start": 14.0,
+          "time_end": 42.5,
+          "description": "Battery drain rate spike: 100.00%/min (baseline: 35.29%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.0,
+            "avg_drain_rate_per_min": 98.86,
+            "baseline_drain_per_min": 35.29,
+            "spike_ratio": 2.83
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF",
+          "CRUISE"
+        ],
+        "time_range": [
+          14.0,
+          42.5
+        ]
+      },
+      "2": {
+        "bug": {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 16.204,
+          "time_end": 17.904,
+          "description": "High motor output variance (81914) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 81913.7578125,
+            "duration_sec": 1.7
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          16.204,
+          17.904
+        ]
+      }
+    }
+  },
+  "competition/mission1-2": {
+    "original_bugs": 3,
+    "phase_filtered_bugs": 1,
+    "phase_ranges": {
+      "ARMING_TAKEOFF": [
+        0.0,
+        23.0
+      ],
+      "CRUISE": [
+        24.0,
+        78.0
+      ],
+      "LANDING": [
+        79.0,
+        88.0
+      ]
+    },
+    "bugs": {
+      "0": {
+        "bug": {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 13.5,
+          "time_end": 16.5,
+          "description": "High battery drain (64.01%/min) during low motor activity (1006 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 64.01,
+            "avg_motor_output": 1006.37,
+            "duration_sec": 3.0
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          13.5,
+          16.5
+        ]
+      },
+      "1": {
+        "bug": {
+          "type": "drain_rate_spike",
+          "severity": "low",
+          "time_start": 15.0,
+          "time_end": 43.5,
+          "description": "Battery drain rate spike: 100.00%/min (baseline: 33.71%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.0,
+            "avg_drain_rate_per_min": 98.86,
+            "baseline_drain_per_min": 33.71,
+            "spike_ratio": 2.97
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF",
+          "CRUISE"
+        ],
+        "time_range": [
+          15.0,
+          43.5
+        ]
+      },
+      "2": {
+        "bug": {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 17.204,
+          "time_end": 18.904,
+          "description": "High motor output variance (83092) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 83091.78125,
+            "duration_sec": 1.7
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          17.204,
+          18.904
+        ]
+      }
+    }
+  },
+  "competition/mission2": {
+    "original_bugs": 3,
+    "phase_filtered_bugs": 1,
+    "phase_ranges": {
+      "ARMING_TAKEOFF": [
+        0.0,
+        22.0
+      ],
+      "CRUISE": [
+        23.0,
+        121.0
+      ],
+      "LANDING": [
+        122.0,
+        132.0
+      ]
+    },
+    "bugs": {
+      "0": {
+        "bug": {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 12.5,
+          "time_end": 15.5,
+          "description": "High battery drain (63.79%/min) during low motor activity (1005 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 63.79,
+            "avg_motor_output": 1004.86,
+            "duration_sec": 3.0
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          12.5,
+          15.5
+        ]
+      },
+      "1": {
+        "bug": {
+          "type": "drain_rate_spike",
+          "severity": "high",
+          "time_start": 13.5,
+          "time_end": 43.0,
+          "description": "Battery drain rate spike: 100.59%/min (baseline: 22.64%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.59,
+            "avg_drain_rate_per_min": 97.67,
+            "baseline_drain_per_min": 22.64,
+            "spike_ratio": 4.44
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF",
+          "CRUISE"
+        ],
+        "time_range": [
+          13.5,
+          43.0
+        ]
+      },
+      "2": {
+        "bug": {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 16.32,
+          "time_end": 17.92,
+          "description": "High motor output variance (83070) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 83070.171875,
+            "duration_sec": 1.6
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          16.32,
+          17.92
+        ]
+      }
+    }
+  },
+  "competition/mission2-2": {
+    "original_bugs": 3,
+    "phase_filtered_bugs": 1,
+    "phase_ranges": {
+      "ARMING_TAKEOFF": [
+        0.0,
+        22.0
+      ],
+      "CRUISE": [
+        23.0,
+        134.0
+      ],
+      "LANDING": [
+        135.0,
+        145.0
+      ]
+    },
+    "bugs": {
+      "0": {
+        "bug": {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 12.5,
+          "time_end": 15.5,
+          "description": "High battery drain (63.74%/min) during low motor activity (1007 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 63.74,
+            "avg_motor_output": 1006.59,
+            "duration_sec": 3.0
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          12.5,
+          15.5
+        ]
+      },
+      "1": {
+        "bug": {
+          "type": "drain_rate_spike",
+          "severity": "high",
+          "time_start": 13.5,
+          "time_end": 43.0,
+          "description": "Battery drain rate spike: 100.00%/min (baseline: 20.55%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.0,
+            "avg_drain_rate_per_min": 97.68,
+            "baseline_drain_per_min": 20.55,
+            "spike_ratio": 4.87
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF",
+          "CRUISE"
+        ],
+        "time_range": [
+          13.5,
+          43.0
+        ]
+      },
+      "2": {
+        "bug": {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 16.308,
+          "time_end": 17.804,
+          "description": "High motor output variance (83750) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 83749.859375,
+            "duration_sec": 1.5
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          16.308,
+          17.804
+        ]
+      }
+    }
+  },
+  "competition/mission3": {
+    "original_bugs": 3,
+    "phase_filtered_bugs": 1,
+    "phase_ranges": {
+      "ARMING_TAKEOFF": [
+        0.0,
+        23.0
+      ],
+      "CRUISE": [
+        24.0,
+        135.0
+      ],
+      "LANDING": [
+        136.0,
+        146.0
+      ]
+    },
+    "bugs": {
+      "0": {
+        "bug": {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 13.5,
+          "time_end": 16.0,
+          "description": "High battery drain (58.90%/min) during low motor activity (981 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 58.9,
+            "avg_motor_output": 980.98,
+            "duration_sec": 2.5
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          13.5,
+          16.0
+        ]
+      },
+      "1": {
+        "bug": {
+          "type": "drain_rate_spike",
+          "severity": "high",
+          "time_start": 14.5,
+          "time_end": 44.0,
+          "description": "Battery drain rate spike: 100.37%/min (baseline: 20.48%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.37,
+            "avg_drain_rate_per_min": 97.68,
+            "baseline_drain_per_min": 20.48,
+            "spike_ratio": 4.9
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF",
+          "CRUISE"
+        ],
+        "time_range": [
+          14.5,
+          44.0
+        ]
+      },
+      "2": {
+        "bug": {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 17.12,
+          "time_end": 18.82,
+          "description": "High motor output variance (82339) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 82339.3125,
+            "duration_sec": 1.7
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          17.12,
+          18.82
+        ]
+      }
+    }
+  },
+  "competition/mission3-2": {
+    "original_bugs": 3,
+    "phase_filtered_bugs": 1,
+    "phase_ranges": {
+      "ARMING_TAKEOFF": [
+        0.0,
+        23.0
+      ],
+      "CRUISE": [
+        24.0,
+        138.0
+      ],
+      "LANDING": [
+        139.0,
+        148.0
+      ]
+    },
+    "bugs": {
+      "0": {
+        "bug": {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 13.5,
+          "time_end": 16.0,
+          "description": "High battery drain (59.83%/min) during low motor activity (985 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 59.83,
+            "avg_motor_output": 984.73,
+            "duration_sec": 2.5
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          13.5,
+          16.0
+        ]
+      },
+      "1": {
+        "bug": {
+          "type": "drain_rate_spike",
+          "severity": "high",
+          "time_start": 14.5,
+          "time_end": 44.0,
+          "description": "Battery drain rate spike: 100.39%/min (baseline: 20.13%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.39,
+            "avg_drain_rate_per_min": 97.67,
+            "baseline_drain_per_min": 20.13,
+            "spike_ratio": 4.99
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF",
+          "CRUISE"
+        ],
+        "time_range": [
+          14.5,
+          44.0
+        ]
+      },
+      "2": {
+        "bug": {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 17.112,
+          "time_end": 18.708,
+          "description": "High motor output variance (84457) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 84457.171875,
+            "duration_sec": 1.6
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          17.112,
+          18.708
+        ]
+      }
+    }
+  },
+  "stress/hover": {
+    "original_bugs": 3,
+    "phase_filtered_bugs": 1,
+    "phase_ranges": {
+      "ARMING_TAKEOFF": [
+        0.0,
+        22.0
+      ],
+      "CRUISE": [
+        23.0,
+        106.0
+      ],
+      "LANDING": [
+        107.0,
+        117.0
+      ]
+    },
+    "bugs": {
+      "0": {
+        "bug": {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 13.5,
+          "time_end": 15.5,
+          "description": "High battery drain (60.74%/min) during low motor activity (1038 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 60.74,
+            "avg_motor_output": 1038.4,
+            "duration_sec": 2.0
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          13.5,
+          15.5
+        ]
+      },
+      "1": {
+        "bug": {
+          "type": "drain_rate_spike",
+          "severity": "medium",
+          "time_start": 14.5,
+          "time_end": 44.0,
+          "description": "Battery drain rate spike: 100.39%/min (baseline: 25.42%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.39,
+            "avg_drain_rate_per_min": 97.59,
+            "baseline_drain_per_min": 25.42,
+            "spike_ratio": 3.95
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF",
+          "CRUISE"
+        ],
+        "time_range": [
+          14.5,
+          44.0
+        ]
+      },
+      "2": {
+        "bug": {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 16.416,
+          "time_end": 18.116,
+          "description": "High motor output variance (83298) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 83297.84375,
+            "duration_sec": 1.7
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          16.416,
+          18.116
+        ]
+      }
+    }
+  },
+  "stress/zigzag": {
+    "original_bugs": 3,
+    "phase_filtered_bugs": 1,
+    "phase_ranges": {
+      "ARMING_TAKEOFF": [
+        0.0,
+        22.0
+      ],
+      "CRUISE": [
+        23.0,
+        516.0
+      ],
+      "LANDING": [
+        517.0,
+        525.0
+      ]
+    },
+    "bugs": {
+      "0": {
+        "bug": {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 13.5,
+          "time_end": 15.5,
+          "description": "High battery drain (61.44%/min) during low motor activity (1033 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 61.44,
+            "avg_motor_output": 1032.93,
+            "duration_sec": 2.0
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          13.5,
+          15.5
+        ]
+      },
+      "1": {
+        "bug": {
+          "type": "drain_rate_spike",
+          "severity": "high",
+          "time_start": 13.5,
+          "time_end": 45.0,
+          "description": "Battery drain rate spike: 100.40%/min (baseline: 5.70%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.4,
+            "avg_drain_rate_per_min": 93.3,
+            "baseline_drain_per_min": 5.7,
+            "spike_ratio": 17.6
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF",
+          "CRUISE"
+        ],
+        "time_range": [
+          13.5,
+          45.0
+        ]
+      },
+      "2": {
+        "bug": {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 16.508,
+          "time_end": 18.208,
+          "description": "High motor output variance (84242) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 84242.0078125,
+            "duration_sec": 1.7
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          16.508,
+          18.208
+        ]
+      }
+    }
+  },
+  "stress/altitude": {
+    "original_bugs": 3,
+    "phase_filtered_bugs": 1,
+    "phase_ranges": {
+      "ARMING_TAKEOFF": [
+        0.0,
+        22.0
+      ],
+      "CRUISE": [
+        23.0,
+        164.0
+      ],
+      "LANDING": [
+        165.0,
+        176.0
+      ]
+    },
+    "bugs": {
+      "0": {
+        "bug": {
+          "type": "energy_vampire",
+          "severity": "high",
+          "time_start": 13.5,
+          "time_end": 15.5,
+          "description": "High battery drain (58.92%/min) during low motor activity (1039 PWM)",
+          "metrics": {
+            "avg_drain_rate_per_min": 58.92,
+            "avg_motor_output": 1039.49,
+            "duration_sec": 2.0
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          13.5,
+          15.5
+        ]
+      },
+      "1": {
+        "bug": {
+          "type": "drain_rate_spike",
+          "severity": "high",
+          "time_start": 14.0,
+          "time_end": 44.0,
+          "description": "Battery drain rate spike: 100.39%/min (baseline: 17.00%/min)",
+          "metrics": {
+            "max_drain_rate_per_min": 100.39,
+            "avg_drain_rate_per_min": 96.77,
+            "baseline_drain_per_min": 17.0,
+            "spike_ratio": 5.91
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF",
+          "CRUISE"
+        ],
+        "time_range": [
+          14.0,
+          44.0
+        ]
+      },
+      "2": {
+        "bug": {
+          "type": "motor_inefficiency",
+          "severity": "medium",
+          "time_start": 16.408,
+          "time_end": 18.108,
+          "description": "High motor output variance (83865) indicating unbalanced load",
+          "metrics": {
+            "avg_variance": 83865.140625,
+            "duration_sec": 1.7
+          }
+        },
+        "phases": [
+          "ARMING_TAKEOFF"
+        ],
+        "time_range": [
+          16.408,
+          18.108
+        ]
+      }
+    }
+  }
+}
